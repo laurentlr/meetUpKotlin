@@ -1,8 +1,10 @@
 apply plugin: 'com.android.application'
+apply plugin: "de.mannodermaus.android-junit5"
 
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
+
 
 android {
     compileSdkVersion 25
@@ -47,8 +49,10 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:3.7.0"
     implementation group: 'com.squareup.retrofit2', name: 'converter-gson', version: '2.1.0'
 
-    //test
-    testImplementation 'junit:junit:4.12'
+    //Junit 5
+    testImplementation junitJupiter()
+    //"parameterized tests"
+    testImplementation junitParams()
     testImplementation "org.mockito:mockito-core:2.2.28"
     testImplementation "org.assertj:assertj-core:1.7.1"
 }
